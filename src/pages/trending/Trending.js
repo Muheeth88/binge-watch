@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import style from "./Trending.module.css"
 import axios from "axios";
 import Card from "../../components/card/Card";
-import Pagination from "../../components/pagination/Paginationx";
+import Paginationx from "../../components/pagination/Paginationx";
+import Genres from "../../components/genres/Genres";
 
 const Trending = () => {
   const [content, setContent] = useState([]);
@@ -17,7 +18,10 @@ const Trending = () => {
 
   useEffect(() => {
     fetchTrending();
+    // eslint-disable-next-line 
   }, [page]);
+
+  // let numOfPages = 10;
 
   return (
     <>
@@ -36,7 +40,7 @@ const Trending = () => {
             />
           ))}
       </div>
-      <Pagination setPage={setPage} />
+      <Paginationx setPage={setPage}/>
     </>
   );
 };
