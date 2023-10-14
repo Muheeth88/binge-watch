@@ -12,7 +12,7 @@ const Paginationx = (props) => {
 
   return (
     <div style={{width: "100%", display:"flex", justifyContent:"center", marginTop: 10}}>
-      <Pagination count={numOfPages} onChange={(e) => handlePageChange(e.target.textContent)} />
+      <Pagination color='primary' count={numOfPages} onChange={(e) => handlePageChange(e.target.textContent)} />
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import style from "./Trending.module.css"
 import axios from "axios";
 import Card from "../../components/card/Card";
 import Pagination from "../../components/pagination/Paginationx";
@@ -21,7 +22,7 @@ const Trending = () => {
   return (
     <>
       <div className="page-title">Trending</div>
-      <div className="content">
+      <div className={style.content}>
         {content &&
           content.map((c) => (
             <Card

@@ -1,0 +1,13 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 16px 0;
+}
+
+.subtitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+}
