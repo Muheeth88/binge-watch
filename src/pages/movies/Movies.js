@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Card from '../../components/card/Card';
 import Paginationx from '../../components/pagination/Paginationx';
 import Genres from '../../components/genres/Genres';
+import style from "./Movie.module.css"
 
 const Movies = () => {
 
@@ -30,13 +31,14 @@ const Movies = () => {
     <>
     <div>Movies</div>
     <Genres 
+      type = "movie"
       selectedGenres={selectedGenres}
       setSelectedGenres={setSelectedGenres}
       genres={genres}
       setGenres={setGenres}
       setPage={setPage}
     />
-      <div className="content">
+      <div className={style.content}>
         {content &&
           content.map((c) => (
             <Card

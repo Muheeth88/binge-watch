@@ -3,7 +3,7 @@ import style from "./Trending.module.css"
 import axios from "axios";
 import Card from "../../components/card/Card";
 import Paginationx from "../../components/pagination/Paginationx";
-import Genres from "../../components/genres/Genres";
+// import Genres from "../../components/genres/Genres";
 
 const Trending = () => {
   const [content, setContent] = useState([]);
