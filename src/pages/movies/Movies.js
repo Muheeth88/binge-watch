@@ -4,6 +4,7 @@ import Card from '../../components/card/Card';
 import Paginationx from '../../components/pagination/Paginationx';
 import Genres from '../../components/genres/Genres';
 import style from "./Movie.module.css"
+import useGenres from '../../components/hooks/useGenres';
 
 const Movies = () => {
 
@@ -12,10 +13,11 @@ const Movies = () => {
   const [numOfPages, setNumOfPages] = useState();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+  const genresForURL = useGenres(selectedGenres);
 
   const fetchMovies = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=${page}`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=${page}&with_genres=${genresForURL}`
     );
     setContent(data.results)
     setNumOfPages(data.total_pages)
@@ -23,7 +25,7 @@ const Movies = () => {
 
   useEffect(() => {
     fetchMovies();
-  }, [page])
+  }, [page, genresForURL])
   
 
 

@@ -11,7 +11,7 @@ const Genres = (props) => {
       props.setGenres({})
     }
     // eslint-disable-next-line
-  }, [])
+  }, [props.page])
 
   const fetchGenres = async () => {
     const {data} =  await axios.get(`https://api.themoviedb.org/3/genre/${props.type}/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`)
